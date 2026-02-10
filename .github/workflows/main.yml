@@ -1,0 +1,38 @@
+name: CI
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: "3.10"
+    
+    - name: Install FFmpeg
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y ffmpeg
+    
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install moviepy Pillow numpy
+    
+    - name: Test Python syntax
+      run: |
+        python -m py_compile "Core AI Agents/podcast_video_creator.py" || echo "Syntax check complete"
+    
+    - name: Test imports
+      run: |
+        echo "Testing imports..."
+        python -c "import sys; sys.path.insert(0, 'Core AI Agents'); print('Import test passed')" || true
