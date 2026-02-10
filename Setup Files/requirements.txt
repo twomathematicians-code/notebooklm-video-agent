@@ -1,0 +1,12 @@
+# Core dependencies
+moviepy>=1.0.3
+librosa>=0.10.0
+numpy>=1.24.0
+Pillow>=10.0.0
+
+# Optional but recommended
+openai-whisper>=20231117
+requests>=2.31.0
+
+# For better performance
+imageio[ffmpeg]>=2.31.0

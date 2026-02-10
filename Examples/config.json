@@ -1,0 +1,35 @@
+{
+  "video_settings": {
+    "resolution": "1920x1080",
+    "fps": 30,
+    "bitrate": "5000k"
+  },
+  "timing": {
+    "transition_duration": 0.5,
+    "default_slide_duration": 5.0,
+    "fade_in_duration": 1.0,
+    "fade_out_duration": 1.0
+  },
+  "captions": {
+    "enabled": true,
+    "style": "youtube",
+    "font": "Arial-Bold",
+    "font_size": 48,
+    "color": "white",
+    "stroke_color": "black",
+    "stroke_width": 2,
+    "position": "bottom"
+  },
+  "branding": {
+    "logo_path": null,
+    "logo_position": "top-right",
+    "intro_clip": null,
+    "outro_clip": null
+  },
+  "output": {
+    "format": "mp4",
+    "codec": "libx264",
+    "audio_codec": "aac",
+    "quality": "high"
+  }
+}
